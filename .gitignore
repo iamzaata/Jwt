@@ -1,0 +1,9 @@
+﻿# Ignorar archivos temporales y configuración de Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dbmdl
+*.log

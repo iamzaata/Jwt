@@ -1,4 +1,5 @@
 ﻿using Jwt.Constants;
+using Jwt.Data;
 using Jwt.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -79,3 +80,4 @@ namespace Jwt.Controllers
         }
     }
 }
+

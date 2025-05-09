@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyecto API\\jwt\\jwt\\jwt.csproj": {}
+    "D:\\Proyectos\\Jwt\\jwt.csproj": {}
   },
   "projects": {
-    "D:\\Proyecto API\\jwt\\jwt\\jwt.csproj": {
+    "D:\\Proyectos\\Jwt\\jwt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyecto API\\jwt\\jwt\\jwt.csproj",
+        "projectUniqueName": "D:\\Proyectos\\Jwt\\jwt.csproj",
         "projectName": "jwt",
-        "projectPath": "D:\\Proyecto API\\jwt\\jwt\\jwt.csproj",
-        "packagesPath": "C:\\Users\\Felipe Loiaza\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyecto API\\jwt\\jwt\\obj\\",
+        "projectPath": "D:\\Proyectos\\Jwt\\jwt.csproj",
+        "packagesPath": "C:\\Users\\Floai\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\Jwt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Felipe Loiaza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Floai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -55,6 +55,16 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Microsoft.Owin.Security.Jwt": {
               "target": "Package",
               "version": "[4.2.2, )"
@@ -83,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

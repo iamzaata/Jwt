@@ -1,13 +1,16 @@
+using Jwt.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configurar el contexto de la base de datos para usar SQLite
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite("Data Source=localdb.db"));  // Usamos SQLite local
 
-builder.Services.AddControllers();
-
+// Configuración de la autenticación JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;
@@ -24,13 +27,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Agregar controladores
+builder.Services.AddControllers();
+
+// Configurar Swagger para la API (opcional)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurar el pipeline de la aplicación
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -38,9 +44,16 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Usar autenticación y autorización
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Mapeo de controladores
 app.MapControllers();
 
 app.Run();
+
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));

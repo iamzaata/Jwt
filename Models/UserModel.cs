@@ -8,5 +8,8 @@
         public string Rol { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
+
+        public bool IsActive { get; set; } = true; // Por defecto activo
     }
+
 }
